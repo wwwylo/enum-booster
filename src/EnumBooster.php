@@ -3,12 +3,10 @@
 namespace Wiilon\EnumBooster;
 
 use Hyperf\Collection\Collection;
-use Hyperf\Context\ApplicationContext;
 use Hyperf\Di\ReflectionManager;
-use InvalidArgumentException;
 use RuntimeException;
-use Wiilon\EnumBooster\Annotation\EnumAnnotationReader;
 use Wiilon\EnumBooster\Annotation\DI;
+use Wiilon\EnumBooster\Annotation\EnumAnnotationReader;
 use Wiilon\EnumBooster\Annotation\Invoke;
 use Wiilon\EnumBooster\Annotation\Label;
 use Wiilon\EnumBooster\Annotation\Property;
@@ -64,7 +62,7 @@ trait EnumBooster
         if (empty($attributes)) {
             throw new NoEntryException('No entry');
         }
-        return ApplicationContext::getContainer()->get($attributes[0]->newInstance()->value);
+        return Bootstrap::getContainer()->get($attributes[0]->newInstance()->value);
     }
 
 
@@ -80,9 +78,9 @@ trait EnumBooster
         }
 
         $name = $attributes[0]->newInstance()->value;
-        if (ApplicationContext::hasContainer()) {
+        if (Bootstrap::hasContainer()) {
             /** @var \Hyperf\Di\Container $container */
-            $container = ApplicationContext::getContainer();
+            $container = Bootstrap::getContainer();
             if (method_exists($container, 'make')) {
                 return $container->make($name, $parameters);
             }
@@ -133,10 +131,8 @@ trait EnumBooster
             return call_user_func([$className, $methodName], $this, ...$args);
         }
 
-        return ApplicationContext::getContainer()->get($className)->{$methodName}($this, ...$args);
+        return Bootstrap::getContainer()->get($className)->{$methodName}($this, ...$args);
     }
-
-
 
 
 }
