@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Wiilon\EnumBooster;
+namespace Wiilon\EnumBooster\Support;
 
 use Hyperf\Di\MetadataCollector;
 use InvalidArgumentException;
+use ReflectionEnum;
 use ReflectionEnumUnitCase;
 use UnitEnum;
-use ReflectionEnum;
 
 class EnumReflectionManager extends MetadataCollector
 {

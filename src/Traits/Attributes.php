@@ -6,9 +6,9 @@ namespace Wiilon\EnumBooster\Traits;
 
 use InvalidArgumentException;
 use UnitEnum;
-use Wiilon\EnumBooster\Annotation\EnumAnnotationReader;
+use Wiilon\EnumBooster\Support\EnumAnnotationReader;
 
-trait WithAttributes
+trait Attributes
 {
     /**
      * @template T

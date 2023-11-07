@@ -2,10 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Wiilon\EnumBooster\Annotation;
+namespace Wiilon\EnumBooster\Support;
 
 use UnitEnum;
-use Wiilon\EnumBooster\EnumReflectionManager;
 
 class EnumAnnotationReader
 {
