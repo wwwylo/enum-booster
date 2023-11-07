@@ -15,7 +15,7 @@ use Wiilon\EnumBooster\Exception\NoEntryException;
 
 use function Hyperf\Collection\data_get;
 
-class Support
+class AnnotationParser
 {
     /**
      * inject.

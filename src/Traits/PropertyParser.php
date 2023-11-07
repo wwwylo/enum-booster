@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Wiilon\EnumBooster\Traits;
 
-use Wiilon\EnumBooster\Support\Support;
+use Wiilon\EnumBooster\Support\AnnotationParser;
 
-trait Property
+trait PropertyParser
 {
 
     /**
@@ -16,6 +16,6 @@ trait Property
      */
     public function property(?string $key = null, mixed $default = null): mixed
     {
-        return Support::property($this, $key, $default);
+        return AnnotationParser::property($this, $key, $default);
     }
 }

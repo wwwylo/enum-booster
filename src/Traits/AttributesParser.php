@@ -8,7 +8,7 @@ use InvalidArgumentException;
 use UnitEnum;
 use Wiilon\EnumBooster\Support\EnumAnnotationReader;
 
-trait Attributes
+trait AttributesParser
 {
     /**
      * @template T

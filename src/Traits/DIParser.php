@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Wiilon\EnumBooster\Traits;
 
-use Wiilon\EnumBooster\Support\Support;
+use Wiilon\EnumBooster\Support\AnnotationParser;
 
-trait DI
+trait DIParser
 {
 
     /**
@@ -16,7 +16,7 @@ trait DI
      */
     public function inject(): mixed
     {
-        return Support::inject($this);
+        return AnnotationParser::inject($this);
     }
 
     /**
@@ -25,6 +25,6 @@ trait DI
      */
     public function make(array $parameters = []): mixed
     {
-        return Support::make($this, $parameters);
+        return AnnotationParser::make($this, $parameters);
     }
 }

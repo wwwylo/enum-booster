@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace Wiilon\EnumBooster\Traits;
 
 use Wiilon\EnumBooster\Support\EnumAnnotationReader;
-use Wiilon\EnumBooster\Support\Support;
+use Wiilon\EnumBooster\Support\AnnotationParser;
 
-trait Label
+trait LabelParser
 {
 
     /**
@@ -15,6 +15,6 @@ trait Label
      */
     public function label(): ?string
     {
-        return Support::label($this);
+        return AnnotationParser::label($this);
     }
 }

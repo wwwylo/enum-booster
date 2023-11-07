@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Wiilon\EnumBooster\Traits;
 
-use Wiilon\EnumBooster\Support\Support;
+use Wiilon\EnumBooster\Support\AnnotationParser;
 
-trait Invoke
+trait InvokeParser
 {
 
     /**
@@ -15,6 +15,6 @@ trait Invoke
      */
     public function invoke(...$args): mixed
     {
-        return Support::invoke($this, ...$args);
+        return AnnotationParser::invoke($this, ...$args);
     }
 }
